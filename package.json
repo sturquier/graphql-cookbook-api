@@ -1,0 +1,27 @@
+{
+  "name": "graphql-cookbook-api",
+  "version": "1.0.0",
+  "description": "GraphQL food API developed in Typescript with Vesper Framework",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sturquier/graphql-cookbook-api.git"
+  },
+  "author": "Simon Turquier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sturquier/graphql-cookbook-api/issues"
+  },
+  "homepage": "https://github.com/sturquier/graphql-cookbook-api#readme",
+  "dependencies": {
+    "mysql": "^2.16.0",
+    "vesper": "^0.1.9"
+  },
+  "devDependencies": {
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6"
+  }
+}
