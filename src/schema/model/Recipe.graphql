@@ -1,0 +1,8 @@
+type Recipe {
+  id: ID
+  title: String
+  description: String
+  ingredients: [Ingredient]
+  categories: [Category]
+  preparations: [Preparation]
+}
