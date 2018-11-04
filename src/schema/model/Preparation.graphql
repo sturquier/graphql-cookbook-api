@@ -1,5 +1,5 @@
 type Preparation {
-  id: ID
+  id: Int
   step: Int
   instruction: String
   recipe: Recipe

@@ -1,8 +1,8 @@
 type Recipe {
-  id: ID
+  id: Int
   title: String
   description: String
   ingredients: [Ingredient]
   categories: [Category]
-  preparations: [Preparation]
+  preparation: [Preparation]
 }
