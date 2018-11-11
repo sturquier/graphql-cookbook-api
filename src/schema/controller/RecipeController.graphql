@@ -1,4 +1,4 @@
 type Query {
-  recipes: [Recipe]
+  recipes(limit: Int, offset: Int, sortBy: String): [Recipe]
   recipe(id: Int): Recipe
 }
