@@ -4,5 +4,6 @@ type Recipe {
   description: String
   ingredients: [Ingredient]
   categories: [Category]
+  categoryNames: [String]
   preparation: [Preparation]
 }

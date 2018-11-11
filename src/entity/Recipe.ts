@@ -23,6 +23,9 @@ export class Recipe {
   @JoinTable()
   categories: Category[]
 
+  // RecipeResolver
+  categoryNames: string[]
+
   @OneToMany(() => Preparation, preparation => preparation.recipe)
   preparation: Preparation[]
 }
