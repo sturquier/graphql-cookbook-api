@@ -1,6 +1,9 @@
 import { Controller, Query, Mutation, ArgsValidator } from 'vesper'
 import { EntityManager, FindManyOptions } from 'typeorm'
 import { Recipe } from '../entity/Recipe'
+import { Category } from '../entity/Category'
+import { PaginationArgs } from '../args/PaginationArgs'
+import { CreateRecipeArgs } from '../args/CreateRecipeArgs'
 import { RecipesArgsValidator } from '../validator/RecipesArgsValidator'
 
 @Controller()
@@ -10,7 +13,7 @@ export class RecipeController {
 
   @Query()
   @ArgsValidator(RecipesArgsValidator)
-  recipes(args) {
+  recipes(args: PaginationArgs): Promise<Recipe[]> {
     let findOptions: FindManyOptions = {}
 
     if (args.limit) { findOptions.take = args.limit }
@@ -22,18 +25,24 @@ export class RecipeController {
   }
 
   @Query()
-  recipe({ id }) {
+  recipe({ id }: { id: number }): Promise<Recipe> {
     return this.entityManager.findOne(Recipe, id)
   }
 
   @Mutation()
-  createRecipe(args) {
+  async createRecipe(args: CreateRecipeArgs): Promise<Recipe> {
     const recipe = this.entityManager.create(Recipe, args)
+    if (args.categoryIds) {
+      recipe.categories = await Promise.all(args.categoryIds.map(categoryId => {
+        return this.entityManager.findOne(Category, categoryId)
+      }))
+    }
+
     return this.entityManager.save(Recipe, recipe)
   }
 
   @Mutation()
-  async deleteRecipe({ id }) {
+  async deleteRecipe({ id }: { id: number }): Promise<Boolean> {
     await this.entityManager.remove(Recipe, { id: id })
     return true
   }

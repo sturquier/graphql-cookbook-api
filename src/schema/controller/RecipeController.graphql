@@ -4,6 +4,6 @@ type Query {
 }
 
 type Mutation {
-  createRecipe(title: String, description: String): Recipe
+  createRecipe(title: String, description: String, categoryIds: [Int]): Recipe
   deleteRecipe(id: Int): Boolean
 }
