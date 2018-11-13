@@ -1,4 +1,4 @@
-import { Controller, Query, ArgsValidator } from 'vesper'
+import { Controller, Query, Mutation, ArgsValidator } from 'vesper'
 import { EntityManager, FindManyOptions } from 'typeorm'
 import { Recipe } from '../entity/Recipe'
 import { RecipesArgsValidator } from '../validator/RecipesArgsValidator'
@@ -24,5 +24,17 @@ export class RecipeController {
   @Query()
   recipe({ id }) {
     return this.entityManager.findOne(Recipe, id)
+  }
+
+  @Mutation()
+  createRecipe(args) {
+    const recipe = this.entityManager.create(Recipe, args)
+    return this.entityManager.save(Recipe, recipe)
+  }
+
+  @Mutation()
+  async deleteRecipe({ id }) {
+    await this.entityManager.remove(Recipe, { id: id })
+    return true
   }
 }

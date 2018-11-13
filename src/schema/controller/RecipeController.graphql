@@ -2,3 +2,8 @@ type Query {
   recipes(limit: Int, offset: Int, sortBy: String): [Recipe]
   recipe(id: Int): Recipe
 }
+
+type Mutation {
+  createRecipe(title: String, description: String): Recipe
+  deleteRecipe(id: Int): Boolean
+}

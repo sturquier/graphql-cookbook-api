@@ -1,4 +1,4 @@
-import { Controller, Query } from 'vesper'
+import { Controller, Query, Mutation } from 'vesper'
 import { EntityManager } from 'typeorm'
 import { Category } from '../entity/Category'
 
@@ -15,5 +15,17 @@ export class CategoryController {
   @Query()
   category({ id }) {
     return this.entityManager.findOne(Category, id)
+  }
+
+  @Mutation()
+  createCategory(args) {
+    const category = this.entityManager.create(Category, args)
+    return this.entityManager.save(Category, category)
+  }
+
+  @Mutation()
+  async deleteCategory({ id }) {
+    await this.entityManager.remove(Category, { id: id })
+    return true
   }
 }
