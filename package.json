@@ -4,7 +4,10 @@
   "description": "GraphQL food API developed in Typescript with Vesper Framework",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node src/index.ts",
+    "start": "node build/index.js",
+    "build": "tsc",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
