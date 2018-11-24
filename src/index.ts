@@ -4,7 +4,7 @@ import { Ingredient } from './entity/Ingredient'
 import { Preparation } from './entity/Preparation'
 import { Recipe } from './entity/Recipe'
 
-const PORT = parseInt(process.env.port) || 5000
+const PORT = parseInt(process.env.PORT) || 5000
 
 bootstrap({
   port: PORT,
