@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "start": "node build/index.js",
-    "build": "tsc",
+    "build": "rimraf build && tsc && copyfiles -u 1 src/schema/**/*.graphql build",
     "postinstall": "npm run build"
   },
   "repository": {
@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/sturquier/graphql-cookbook-api#readme",
   "dependencies": {
+    "copyfiles": "^2.1.0",
     "mysql": "^2.16.0",
+    "rimraf": "^2.6.2",
     "vesper": "^0.1.9"
   },
   "devDependencies": {
