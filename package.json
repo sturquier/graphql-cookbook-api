@@ -5,9 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "ts-node src/index.ts",
-    "start": "node build/index.js",
-    "build": "rimraf build && tsc && copyfiles -u 1 src/schema/**/*.graphql build",
-    "postinstall": "npm run build"
+    "start": "npm run build",
+    "build": "rimraf build && tsc && copyfiles -u 1 src/schema/**/*.graphql build && node build/index.js"
   },
   "repository": {
     "type": "git",
