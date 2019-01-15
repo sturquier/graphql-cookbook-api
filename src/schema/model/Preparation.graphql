@@ -1,6 +1,0 @@
-type Preparation {
-  id: Int
-  step: Int
-  instruction: String
-  recipe: Recipe
-}

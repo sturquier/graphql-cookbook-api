@@ -1,9 +1,0 @@
-type Query {
-  ingredients: [Ingredient]
-  ingredient(id: Int): Ingredient
-}
-
-type Mutation {
-  createIngredient(name: String, price: Float): Ingredient
-  deleteIngredient(id: Int): Ingredient
-}

@@ -1,9 +1,0 @@
-type Query {
-  categories: [Category]
-  category(id: Int): Category
-}
-
-type Mutation {
-  createCategory(name: String): Category
-  deleteCategory(id: Int): Boolean
-}

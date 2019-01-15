@@ -1,7 +1,7 @@
 {
   "name": "graphql-cookbook-api",
   "version": "1.0.0",
-  "description": "GraphQL food API developed in Typescript with Vesper Framework",
+  "description": "GraphQL food API developed with TypeGraphQL",
   "main": "src/index.ts",
   "scripts": {
     "dev": "ts-node src/index.ts",
@@ -19,11 +19,16 @@
   },
   "homepage": "https://github.com/sturquier/graphql-cookbook-api#readme",
   "dependencies": {
+    "apollo-server": "^2.3.1",
     "copyfiles": "^2.1.0",
     "mysql": "^2.16.0",
+    "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
-    "typescript": "^3.2.2",
-    "vesper": "^0.1.9"
+    "type-graphql": "^0.16.0",
+    "typedi": "^0.8.0",
+    "typeorm": "^0.2.11",
+    "typeorm-typedi-extensions": "^0.2.1",
+    "typescript": "^3.2.2"
   },
   "devDependencies": {
     "ts-node": "^7.0.1"

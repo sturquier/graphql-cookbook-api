@@ -5,5 +5,7 @@ module.exports = {
   "username": process.env.AWS_RDS_DATABASE_USERNAME || "root",
   "password": process.env.AWS_RDS_DATABASE_PASSWORD || "",
   "database": process.env.AWS_RDS_DATABASE_NAME || "cookbook_db",
-  "synchronize": true
+  "synchronize": true,
+  "cache": true,
+  "entities": [__dirname + '/src/entities/*.ts']
 }

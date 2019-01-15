@@ -1,9 +1,0 @@
-type Recipe {
-  id: Int
-  title: String
-  description: String
-  ingredients: [Ingredient]
-  categories: [Category]
-  categoryNames: [String]
-  preparation: [Preparation]
-}
