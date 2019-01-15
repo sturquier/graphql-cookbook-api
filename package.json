@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "start": "npm run build",
-    "build": "rimraf build && tsc && copyfiles -u 1 src/schema/**/*.graphql build && node build/index.js"
+    "build": "rimraf build && tsc && node build/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,6 @@
   "homepage": "https://github.com/sturquier/graphql-cookbook-api#readme",
   "dependencies": {
     "apollo-server": "^2.3.1",
-    "copyfiles": "^2.1.0",
     "mysql": "^2.16.0",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",

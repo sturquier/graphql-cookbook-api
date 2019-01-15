@@ -15,7 +15,8 @@ async function bootstrap(): Promise<void> {
     await TypeORM.createConnection()
 
     const schema = await TypeGraphQL.buildSchema({
-      resolvers: [CategoryResolver, IngredientResolver, RecipeResolver]
+      resolvers: [CategoryResolver, IngredientResolver, RecipeResolver],
+      validate: false
     })
 
     const server = new ApolloServer({ schema })
