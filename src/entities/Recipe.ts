@@ -23,14 +23,14 @@ export class Recipe {
   @Field(() => [Ingredient])
   @ManyToMany(() => Ingredient, ingredient => ingredient.recipes)
   @JoinTable()
-  ingredients: Ingredient[]
+  ingredients: Promise<Ingredient[]>
 
   @Field(() => [Category])
   @ManyToMany(() => Category, category => category.recipes)
   @JoinTable()
-  categories: Category[]
+  categories: Promise<Category[]>
 
   @Field(() => [Preparation])
   @OneToMany(() => Preparation, preparation => preparation.recipe)
-  preparation: Preparation[]
+  preparation: Promise<Preparation[]>
 }

@@ -20,5 +20,5 @@ export class Ingredient {
 
   @Field(() => [Recipe])
   @ManyToMany(() => Recipe, recipe => recipe.ingredients)
-  recipes: Recipe[]
+  recipes: Promise<Recipe[]>
 }

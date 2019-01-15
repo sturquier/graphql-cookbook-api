@@ -15,6 +15,6 @@ export class Category {
   name: string
 
   @Field(() => [Recipe])
-  @ManyToMany(() => Recipe, recipe => recipe.categories, { eager: true })
-  recipes: Recipe[]
+  @ManyToMany(() => Recipe, recipe => recipe.categories)
+  recipes: Promise<Recipe[]>
 }

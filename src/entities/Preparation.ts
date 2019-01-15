@@ -20,5 +20,5 @@ export class Preparation {
 
   @Field(() => Recipe)
   @ManyToOne(() => Recipe, recipe => recipe.preparation)
-  recipe: Recipe
+  recipe: Promise<Recipe>
 }
