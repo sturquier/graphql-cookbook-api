@@ -3,9 +3,7 @@ import { ApolloServer } from 'apollo-server'
 import * as TypeGraphQL from 'type-graphql'
 import * as TypeORM from 'typeorm'
 import { Container } from 'typedi'
-import { CategoryResolver } from './resolvers/CategoryResolver'
-import { IngredientResolver } from './resolvers/IngredientResolver'
-import { RecipeResolver } from './resolvers/RecipeResolver'
+import { CategoryResolver, IngredientResolver, RecipeResolver } from './resolvers'
 
 TypeGraphQL.useContainer(Container)
 TypeORM.useContainer(Container)

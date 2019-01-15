@@ -1,9 +1,8 @@
-import { Resolver, Query, Mutation, FieldResolver, Arg, Args, ID } from 'type-graphql'
+import { Resolver, Query, Mutation, Arg, Args, ID } from 'type-graphql'
 import { Repository, FindManyOptions } from 'typeorm'
 import { InjectRepository } from 'typeorm-typedi-extensions'
-import { Recipe } from '../entities/Recipe'
-import { Category } from '../entities/Category'
-import { RecipeInput } from './input/RecipeInput'
+import { Category, Recipe } from '../entities'
+import { RecipeInput } from './input'
 import { PaginationArgs } from '../args/PaginationArgs'
 
 @Resolver(() => Recipe)

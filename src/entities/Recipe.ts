@@ -1,8 +1,6 @@
 import { Field, ID, ObjectType } from 'type-graphql'
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToMany, JoinTable } from 'typeorm'
-import { Ingredient } from './Ingredient'
-import { Category } from './Category'
-import { Preparation } from './Preparation'
+import { Category, Ingredient, Preparation } from './'
 
 @Entity()
 @ObjectType()

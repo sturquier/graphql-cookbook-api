@@ -1,8 +1,8 @@
 import { Resolver, Query, Mutation, Arg, ID } from 'type-graphql'
 import { Repository } from 'typeorm'
 import { InjectRepository } from 'typeorm-typedi-extensions'
-import { Ingredient } from '../entities/Ingredient'
-import { IngredientInput } from './input/IngredientInput'
+import { Ingredient } from '../entities'
+import { IngredientInput } from './input'
 
 @Resolver(() => Ingredient)
 export class IngredientResolver {

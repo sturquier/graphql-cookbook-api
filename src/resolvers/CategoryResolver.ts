@@ -1,8 +1,8 @@
 import { Resolver, Query, Mutation, Arg, ID } from 'type-graphql'
 import { Repository } from 'typeorm'
 import { InjectRepository } from 'typeorm-typedi-extensions'
-import { Category } from '../entities/Category'
-import { CategoryInput } from './input/CategoryInput'
+import { Category } from '../entities'
+import { CategoryInput } from './input'
 
 @Resolver(() => Category)
 export class CategoryResolver {
