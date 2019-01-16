@@ -2,11 +2,13 @@
   "compilerOptions": {
     "outDir": "./build",
     "lib": ["es6", "es7", "esnext"],
+    "types": ["node"],
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "esModuleInterop": true
   }
 }
