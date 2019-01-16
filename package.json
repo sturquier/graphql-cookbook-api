@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "start": "npm run build",
-    "build": "rimraf build && tsc && node build/index.js"
+    "build": "rimraf build && tsc && node build/src/index.js"
   },
   "repository": {
     "type": "git",
