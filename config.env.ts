@@ -25,7 +25,7 @@ const config = {
       database: process.env.AWS_RDS_DATABASE_NAME,
       synchronize: false,
       cache: true,
-      entities: [__dirname + '/build/src/entities/*.js']
+      entities: [__dirname + '/src/entities/*.js']
     },
   },
 }
