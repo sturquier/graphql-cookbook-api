@@ -19,6 +19,6 @@ export class Preparation {
   instruction: string
 
   @Field(() => Recipe)
-  @ManyToOne(() => Recipe, recipe => recipe.preparation)
+  @ManyToOne(() => Recipe, recipe => recipe.preparation, { onDelete: 'CASCADE' })
   recipe: Promise<Recipe>
 }
