@@ -1,4 +1,5 @@
 import { InputType, Field, ID } from 'type-graphql'
+import { PreparationInput } from './'
 
 @InputType()
 export class RecipeInput {
@@ -11,4 +12,10 @@ export class RecipeInput {
 
   @Field(() => [ID])
   categoryIds: string[]
+
+  @Field(() => [ID])
+  ingredientIds: string[]
+
+  @Field(() => [PreparationInput])
+  preparationInputs: PreparationInput[]
 }

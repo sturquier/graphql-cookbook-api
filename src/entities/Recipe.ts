@@ -19,9 +19,9 @@ export class Recipe {
   description?: string
 
   @Field(() => [Ingredient])
-  @ManyToMany(() => Ingredient, ingredient => ingredient.recipes)
+  @ManyToMany(() => Ingredient, ingredient => ingredient.recipes, { eager: true })
   @JoinTable()
-  ingredients: Promise<Ingredient[]>
+  ingredients: Ingredient[]
 
   @Field(() => [Category])
   @ManyToMany(() => Category, category => category.recipes, { eager: true })
@@ -29,6 +29,6 @@ export class Recipe {
   categories: Category[]
 
   @Field(() => [Preparation])
-  @OneToMany(() => Preparation, preparation => preparation.recipe)
-  preparation: Promise<Preparation[]>
+  @OneToMany(() => Preparation, preparation => preparation.recipe, { eager: true, cascade: true })
+  preparation: Preparation[]
 }
