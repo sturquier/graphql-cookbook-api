@@ -1,5 +1,6 @@
 import { InputType, Field, ID } from 'type-graphql'
 import { PreparationInput } from './'
+import { Difficulty } from '../enums'
 
 @InputType()
 export class RecipeInput {
@@ -18,4 +19,7 @@ export class RecipeInput {
 
   @Field(() => [PreparationInput])
   preparationInputs: PreparationInput[]
+
+  @Field(() => Difficulty)
+  difficulty: Difficulty
 }

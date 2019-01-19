@@ -1,6 +1,7 @@
 import { Field, ID, ObjectType } from 'type-graphql'
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToMany, JoinTable } from 'typeorm'
 import { Category, Ingredient, Preparation } from './'
+import { Difficulty } from '../enums'
 
 @Entity()
 @ObjectType()
@@ -31,4 +32,8 @@ export class Recipe {
   @Field(() => [Preparation])
   @OneToMany(() => Preparation, preparation => preparation.recipe, { eager: true, cascade: true })
   preparation: Preparation[]
+
+  @Field(() => Difficulty)
+  @Column()
+  difficulty: Difficulty
 }
