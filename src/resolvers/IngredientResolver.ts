@@ -2,7 +2,7 @@ import { Resolver, Query, Mutation, Arg, ID } from 'type-graphql'
 import { Repository } from 'typeorm'
 import { InjectRepository } from 'typeorm-typedi-extensions'
 import { Ingredient } from '../entities'
-import { IngredientInput } from './input'
+import { IngredientInput } from '../inputs'
 
 @Resolver(() => Ingredient)
 export class IngredientResolver {

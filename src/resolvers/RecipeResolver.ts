@@ -2,7 +2,7 @@ import { Resolver, Query, Mutation, Arg, Args, ID } from 'type-graphql'
 import { Repository, FindManyOptions } from 'typeorm'
 import { InjectRepository } from 'typeorm-typedi-extensions'
 import { Category, Recipe, Ingredient, Preparation } from '../entities'
-import { RecipeInput } from './input'
+import { RecipeInput } from '../inputs'
 import { PaginationArgs } from '../args/PaginationArgs'
 
 @Resolver(() => Recipe)
@@ -55,7 +55,7 @@ export class RecipeResolver {
         recipe.preparation.push(preparation)
       })
     }
-    
+
     return await this.recipeRepository.save(recipe)
   }
 
